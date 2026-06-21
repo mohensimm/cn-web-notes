@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 稳定访问说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafbfc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1c2b3c;
+            line-height: 1.7;
+            padding: 2.5rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            padding: 3rem 2.5rem;
+            transition: box-shadow 0.2s;
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 2rem 1.25rem;
+                border-radius: 16px;
+            }
+        }
+
+        /* 标题体系 */
+        h1 {
+            font-weight: 500;
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+            color: #0b1a2a;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #6b7a8c;
+            margin-bottom: 2.2rem;
+            border-bottom: 1px solid #e8edf2;
+            padding-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 2.2rem;
+            margin-bottom: 0.6rem;
+            color: #1e2f3f;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 1.6rem;
+            margin-bottom: 0.3rem;
+            color: #2b3d4e;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #334454;
+        }
+
+        a {
+            color: #1e6b9b;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            font-weight: 450;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #1e6b9b;
+        }
+
+        /* 卡片区 —— 特点 + 场景 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        .feature-card {
+            flex: 1 1 180px;
+            background: #f6f9fc;
+            border-radius: 14px;
+            padding: 1.2rem 1.1rem;
+            border: 1px solid #e5ecf3;
+            transition: background 0.15s;
+        }
+
+        .feature-card:hover {
+            background: #edf3f9;
+        }
+
+        .feature-card strong {
+            display: block;
+            font-weight: 550;
+            font-size: 1rem;
+            color: #143445;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-card span {
+            font-size: 0.9rem;
+            color: #4b5d70;
+        }
+
+        .tagline {
+            background: #f2f6fb;
+            border-left: 4px solid #1e6b9b;
+            padding: 0.9rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            color: #1f3445;
+        }
+
+        .faq-item {
+            margin-top: 0.8rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            font-size: 0.96rem;
+            color: #1b2d3d;
+        }
+
+        .faq-answer {
+            font-size: 0.88rem;
+            color: #4b6177;
+            margin-top: 0.2rem;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            font-size: 0.82rem;
+            color: #7f8f9f;
+            text-align: center;
+            border-top: 1px solid #e8edf2;
+            padding-top: 1.6rem;
+        }
+
+        .small-meta {
+            font-size: 0.75rem;
+            color: #a2b3c3;
+            margin-top: 0.5rem;
+        }
+
+        /* 引用效果 */
+        code {
+            background: #eef3f8;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-size: 0.85em;
+            color: #1f405e;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2eaf1;
+            margin: 1.8rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>开云 · 访问说明</h1>
+    <div class="subtitle">基于稳定入口与页面结构的简要介绍</div>
+
+    <p>
+        在日常使用中，一个可靠的入口不仅节省时间，也降低了反复寻找的成本。<a href="https://cn-web-kai-yun.com">开云</a>
+        作为长期维护的页面，其结构清晰、资源指向明确，适合作为固定参考位置。
+        本文从摘要、特点、使用建议与常见疑问四个层次展开说明，帮助新接触的用户快速建立认知框架。
+    </p>
+
+    <h2>摘要</h2>
+    <p>
+        <strong>开云</strong> 指向一个以信息聚合和工具索引为主的页面环境。它不强调高密度推广，而是把重心放在可读、可查、可延展的布局上。
+        页面内容经过整理，减少无关跳转，适合需要稳定访问场景的用户。
+    </p>
+
+    <h2>亮点</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <strong>结构可预测</strong>
+            <span>栏目分区固定，更新时保持层级一致，降低再适应成本。</span>
+        </div>
+        <div class="feature-card">
+            <strong>低噪浏览</strong>
+            <span>无自动播放、弹窗或高频推送，专注信息本身。</span>
+        </div>
+        <div class="feature-card">
+            <strong>轻量响应</strong>
+            <span>适配常见屏幕宽度，窄屏下依然保留完整内容。</span>
+        </div>
+        <div class="feature-card">
+            <strong>索引清晰</strong>
+            <span>内部导航与外部链接区分明显，避免混淆。</span>
+        </div>
+    </div>
+
+    <h2>使用建议</h2>
+    <p>
+        如果你需要定期查阅某个固定来源的信息，或者希望把 <a href="https://cn-web-kai-yun.com">开云</a>
+        作为浏览器书签中的一类“参考节点”，可以将其加入收藏夹。由于页面不依赖复杂脚本，即使网络环境一般，基础内容也能较快加载。
+        建议在首次访问时浏览一遍主要分区，了解信息排布方式，后续使用效率会更高。
+    </p>
+    <div class="tagline">
+        💡 提示：部分资源指向外部站点，使用时留意地址栏域名变化，确保访问环境安全。
+    </div>
+
+    <h2>场景参考</h2>
+    <p>
+        以下三种场景与当前页面方向契合：<br>
+        · 需要一条稳定、可复述的访问路径时（例如归档记录中保存的链接）；<br>
+        · 作为信息索引页，向他人推荐一个干净的中转站；<br>
+        · 个人工作流中将其设为“每日启动页”之一，降低导航时间。
+    </p>
+
+    <hr>
+
+    <h2>常见疑问摘要</h2>
+
+    <div class="faq-item">
+        <div class="faq-question">页面是否长期维护？</div>
+        <div class="faq-answer">根据过往更新节奏，内容与结构会定期调整，但核心访问地址保持不变。建议关注页面版本标注。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">是否需要注册或登录？</div>
+        <div class="faq-answer">目前页面本身不强制要求账户体系，直接通过浏览器访问即可。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">移动端浏览体验如何？</div>
+        <div class="faq-answer">已针对主流手机屏幕做适配，字体与交互区域保持在合理阅读尺度内。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">如果页面无法打开该怎么办？</div>
+        <div class="faq-answer">可检查本地网络连接、DNS解析或尝试更换浏览器。若持续异常，稍后再试。</div>
+    </div>
+
+    <div class="footer-note">
+        <span>本文档为页面说明性质，所有内容基于公开信息整理。</span><br>
+        <span class="small-meta">更新于 · 2025 · 仅供结构参考</span>
+    </div>
+
+</div>
+</body>
+</html>

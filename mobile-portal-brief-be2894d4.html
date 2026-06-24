@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>爱游戏 · 再访与收藏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: linear-gradient(145deg, #ffe7d4 0%, #ffd4b8 40%, #faccb0 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #2b2b2b;
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ——— 卡片系统 ——— */
+    .card {
+      background: #fffcf9;
+      border-radius: 36px;
+      padding: 32px 28px;
+      box-shadow: 0 12px 28px rgba(155, 90, 40, 0.12), 0 4px 12px rgba(200, 120, 60, 0.08);
+      margin-bottom: 28px;
+      transition: transform 0.15s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 16px 36px rgba(175, 100, 50, 0.18);
+    }
+
+    .card-soft {
+      background: rgba(255, 252, 245, 0.75);
+      backdrop-filter: blur(2px);
+    }
+
+    /* ——— 文字与标题 ——— */
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ad5e2e, #d4824a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #63422b;
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 560;
+      color: #4b3221;
+      margin-bottom: 18px;
+      display: inline-block;
+      border-bottom: 3px solid #e7b28e;
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 520;
+      color: #523a29;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #3f332c;
+    }
+
+    .small-note {
+      font-size: 0.95rem;
+      color: #7d6a5b;
+    }
+
+    /* ——— 链接（“爱游戏”严格保留） ——— */
+    a {
+      color: #b36d3e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #864f26;
+      border-bottom-color: #b56f42;
+    }
+
+    .btn-like-link {
+      display: inline-block;
+      background: #fae6d8;
+      padding: 12px 26px;
+      border-radius: 60px;
+      font-weight: 520;
+      color: #6b3f22;
+      border: 1px solid #eacbb6;
+      transition: background 0.2s, transform 0.1s;
+      margin: 6px 0 12px 0;
+    }
+
+    .btn-like-link:hover {
+      background: #f2d4be;
+      border-color: #dbaa87;
+      transform: scale(1.01);
+    }
+
+    .btn-like-link a {
+      border-bottom: none;
+      color: inherit;
+    }
+
+    .btn-like-link a:hover {
+      border-bottom: none;
+      color: #4b2f1b;
+    }
+
+    /* ——— 优势网格 ——— */
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .advantage-item {
+      background: #fff6ee;
+      border-radius: 28px;
+      padding: 22px 18px;
+      border: 1px solid #f3ddce;
+      transition: background 0.2s;
+    }
+
+    .advantage-item:hover {
+      background: #faeedf;
+    }
+
+    .advantage-icon {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    /* ——— FAQ 摘要 ——— */
+    .faq-block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-q {
+      background: #f9ece1;
+      border-radius: 30px;
+      padding: 18px 22px;
+      border-left: 6px solid #dbaa85;
+    }
+
+    .faq-q strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #4c311f;
+    }
+
+    .faq-q p {
+      margin-bottom: 0;
+    }
+
+    /* ——— 底部 ——— */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px 36px;
+      padding: 18px 0 6px 0;
+      border-top: 1px solid #e3caba;
+      margin-top: 18px;
+    }
+
+    .footer-links a {
+      font-size: 0.95rem;
+      border-bottom: none;
+      color: #644d3a;
+    }
+
+    .footer-links a:hover {
+      color: #9f653b;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #8f7a69;
+      margin-top: 18px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ——— 响应式 ——— */
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 12px;
+      }
+
+      .card {
+        padding: 24px 18px;
+        border-radius: 28px;
+      }
+
+      h1 {
+        font-size: 2.0rem;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+      }
+
+      .advantage-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .faq-q {
+        padding: 14px 16px;
+      }
+
+      .footer-links {
+        gap: 16px 24px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .btn-like-link {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- hero 区 -->
+    <div class="card">
+      <h1>再次回到这里</h1>
+      <div class="hero-sub">
+        收藏的不只是书签，更是那份顺手打开的习惯。
+      </div>
+      <p>有些地方，隔段时间就想回去看看。也许是某个好用的工具，也许是一段放松的间隙——对于很多朋友来说，<a href="https://mobile-portal-igame.com">爱游戏</a> 就是这样一个安静的落脚点。没有复杂的开场，没有催促式的弹窗，加载完毕就是熟悉的界面。</p>
+      <p class="small-note">把地址留在浏览器收藏夹里，哪天路过，点开就好。</p>
+      <div class="btn-like-link">
+        <a href="https://mobile-portal-igame.com">爱游戏</a> · 保存到书签
+      </div>
+    </div>
+
+    <!-- 优势区 + 再访角度 -->
+    <div class="card">
+      <h2>为什么总想再打开</h2>
+      <div class="advantage-grid">
+        <div class="advantage-item">
+          <div class="advantage-icon">📌</div>
+          <h3>不用重新适应</h3>
+          <p>每次访问结构都保持一致，没有突然改版或找不到按钮的尴尬，熟悉的页面位置带来踏实感。</p>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon">🍃</div>
+          <h3>轻量不沉重</h3>
+          <p>页面加载快，不堆积多余模块。即便在移动网络下，也不会有漫长的等待，适合随手打开。</p>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon">🔄</div>
+          <h3>常看常新，但保留底色</h3>
+          <p>内容会随着时间有细微更新，但核心体验没变，就像一家熟悉的小店偶尔换换装饰。</p>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon">🔖</div>
+          <h3>收藏即安心</h3>
+          <p>放进书签夹或添加到主屏幕，下次想来的时候不用搜索，直接打开就行。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 说明区 + 使用场景提示 -->
+    <div class="card card-soft">
+      <h2>关于持续关注这件事</h2>
+      <p>说实话，我们并不鼓励每天必须打卡式的访问。但如果你偶尔想起它，或者恰好需要一段安静浏览的时光——记住 <a href="https://mobile-portal-igame.com">爱游戏</a> 在那里就好。它不会频繁推送通知，也不会用小红点催促你回来。</p>
+      <p>很多用户跟我们说，他们把这个页面放在手机浏览器的「经常访问」列表里，隔一两周点开一次，看看有什么新东西，或者只是随便逛逛。没有压力，反而更容易长久。</p>
+      <p class="small-note">✴️ 小提示：如果你用的是 Safari 或 Chrome，可以把它添加到主屏幕，图标看起来就像一个小应用。</p>
+      <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <span style="background: #f3ddce; border-radius: 40px; padding: 6px 18px; font-size: 0.9rem;">📱 移动端友好</span>
+        <span style="background: #f3ddce; border-radius: 40px; padding: 6px 18px; font-size: 0.9rem;">🧘 无强制推送</span>
+        <span style="background: #f3ddce; border-radius: 40px; padding: 6px 18px; font-size: 0.9rem;">🔁 定期回来看看</span>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+      <h2>一些常被问到的</h2>
+      <div class="faq-block">
+        <div class="faq-q">
+          <strong>❔ 需要注册或登录才能使用吗？</strong>
+          <p>不需要。直接打开 <a href="https://mobile-portal-igame.com">爱游戏</a> 即可浏览，没有强制注册环节。部分互动功能可根据个人意愿决定是否参与。</p>
+        </div>
+        <div class="faq-q">
+          <strong>❔ 我上次收藏的页面还能用吗？</strong>
+          <p>只要域名不变，之前的书签就仍然有效。如果你已经收藏过，直接点击就可以，不用再搜索。</p>
+        </div>
+        <div class="faq-q">
+          <strong>❔ 页面会不会突然大变样？</strong>
+          <p>我们倾向于渐进调整，而不是突然重构。即使有优化，也会尽量保持布局和核心功能的连续性，减少重新适应的成本。</p>
+        </div>
+      </div>
+      <p style="margin-top: 18px; font-size: 0.95rem; color: #6e5b4a;">更多问题可以随时在相关渠道留意说明，我们不设自动客服弹窗。</p>
+    </div>
+
+    <!-- 底部链接 -->
+    <div style="margin-top: 6px;">
+      <div class="footer-links">
+        <a href="https://mobile-portal-igame.com">爱游戏</a>
+        <a href="#">常见问题</a>
+        <a href="#">关于站点</a>
+        <a href="#">隐私说明</a>
+      </div>
+      <div class="copyright">
+        © 持续运营 · 不打扰的陪伴
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
